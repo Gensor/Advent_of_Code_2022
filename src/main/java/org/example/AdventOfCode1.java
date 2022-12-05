@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class AdventOfCode1 {
     public static void main(String[] args) {
         //System.out.println(calorieCounting());
-        System.out.println(AdventOfCode3.rucksackReorganization());
+        AdventOfCode3.rucksackReorganization();
     }
 
     /*  Day 1. Part 2.

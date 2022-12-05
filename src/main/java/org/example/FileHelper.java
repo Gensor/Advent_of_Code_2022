@@ -19,7 +19,6 @@ public class FileHelper {
         return data;
     }
 
-
     public static List<String> readFileAsListOfRows(String path){
         String fileContent = readFileAsString(path);
         return fileContent.isEmpty() ? Collections.emptyList() : Arrays.stream(fileContent.split("\n"))
@@ -27,11 +26,21 @@ public class FileHelper {
                 .collect(Collectors.toList());
     }
 
-    public static List<List<String>> readFileAsListOfCharListsWithoutEmpty(List<String> path){
-        return path.isEmpty() ? Collections.emptyList() : path.stream()
-                .map(line -> Arrays.stream(line.split("")).filter(chr -> !chr.isEmpty()).collect(Collectors.toList()))
-                .collect(Collectors.toList());
-    }
+    public static String[][] readFileAsListOf3Rows(String path){
+        List <String> allRows = readFileAsListOfRows(path);
+        String [][] listOf3 = new String[allRows.size()/3][3];
 
+        int y = 0;
+        for(int i =0; i < allRows.size(); i++){
+            if(i%3 == 2){
+                listOf3[y][2] = allRows.get(i);
+                y++;
+                continue;
+            }
+            listOf3[y][i%3] = allRows.get(i);
+        }
+
+        return listOf3;
+    }
 
 }
