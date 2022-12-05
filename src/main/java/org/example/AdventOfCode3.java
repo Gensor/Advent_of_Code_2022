@@ -11,9 +11,9 @@ import java.util.List;
     What is the sum of the priorities of those item types?
  */
 public class AdventOfCode3 {
-
+    private final static String path = "src/main/resources/rucksack.txt";
     public static void rucksackReorganization(){
-        List<String> rucksacks = FileHelper.readFileAsListOfRows("src/main/java/org/example/rucksack.txt");
+        List<String> rucksacks = FileHelper.readFileAsListOfRows(path);
         int result = 0;
         for (String rucksack : rucksacks) {
             String compartment1 = rucksack.substring(0,rucksack.length()/2);
@@ -27,7 +27,7 @@ public class AdventOfCode3 {
         }
 
         //Start Part2
-            String[][] groupOf3List = FileHelper.readFileAsListOf3Rows("src/main/java/org/example/rucksack.txt");
+            String[][] groupOf3List = FileHelper.readFileAsListOf3Rows(path);
             int result2 = 0;
             for(String [] group : groupOf3List){
                 String rucksack1 = group[0];

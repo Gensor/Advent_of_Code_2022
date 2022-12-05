@@ -6,14 +6,15 @@ import java.util.Comparator;
 public class AdventOfCode1 {
     public static void main(String[] args) {
         //System.out.println(calorieCounting());
-        AdventOfCode3.rucksackReorganization();
+        //AdventOfCode3.rucksackReorganization();
+        AdventOfCode4.campCleanUp();
     }
 
     /*  Day 1. Part 2.
         Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?
      */
     private static int calorieCounting(){
-        String data = FileHelper.readFileAsString("src/main/java/org/example/calories.txt");
+        String data = FileHelper.readFileAsString("src/main/resources/calories.txt");
 
         return Arrays.stream(data.trim().split("\\n\\s"))
                 .mapToInt(column -> Arrays.stream(column.split("\n"))
