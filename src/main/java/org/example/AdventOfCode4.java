@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*
+    Part1.
+    In how many assignment pairs does one range fully contain the other?
+    Part2.
+    In how many assignment pairs do the ranges overlap?
+ */
 public class AdventOfCode4 {
     private static final String path = "src/main/resources/campCleanUp.txt";
-    /*
-        Part1.
-        In how many assignment pairs does one range fully contain the other?
-        Part2.
-        In how many assignment pairs do the ranges overlap?
-     */
     public static void campCleanUp(){
         List<String> listOfPairs = FileHelper.readFileAsListOfRows(path);
 

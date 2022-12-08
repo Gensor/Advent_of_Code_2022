@@ -5,18 +5,20 @@ import java.util.Comparator;
 
 public class AdventOfCode1 {
     public static void main(String[] args) {
-        //System.out.println(calorieCounting());
+        //calorieCounting();
         //AdventOfCode3.rucksackReorganization();
-        AdventOfCode4.campCleanUp();
+        //AdventOfCode4.campCleanUp();
+        AdventOfCode6.startOfPacket();
     }
 
-    /*  Day 1. Part 2.
+    /*
+        Part 2.
         Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?
      */
-    private static int calorieCounting(){
+    private static void calorieCounting(){
         String data = FileHelper.readFileAsString("src/main/resources/calories.txt");
 
-        return Arrays.stream(data.trim().split("\\n\\s"))
+        int result = Arrays.stream(data.trim().split("\\n\\s"))
                 .mapToInt(column -> Arrays.stream(column.split("\n"))
                         .filter(line -> !line.isEmpty())
                         .mapToInt(number -> Integer.parseInt(number.trim()))
@@ -26,6 +28,7 @@ public class AdventOfCode1 {
                 .limit(3)
                 .mapToInt(Integer::intValue)
                 .sum();
+        System.out.println(result);
     }
 
 }

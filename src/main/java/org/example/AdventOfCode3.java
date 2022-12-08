@@ -3,7 +3,8 @@ package org.example;
 import java.util.Arrays;
 import java.util.List;
 
-/*  Day 3. Part 1.
+/*
+    Part 1.
     Find the item type that appears in both compartments of each rucksack.
     What is the sum of the priorities of those item types?
     Part 2.
